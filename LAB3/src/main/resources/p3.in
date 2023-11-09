@@ -1,0 +1,5 @@
+prog{
+a (str);
+read(a);
+print(a);
+}

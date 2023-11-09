@@ -13,9 +13,6 @@ public class HashTable<T> {
             tableItems.add(new ArrayList<>());
     }
 
-    public int getSize() {
-        return size;
-    }
     public int hash(int key){
         return key%size;
     }
