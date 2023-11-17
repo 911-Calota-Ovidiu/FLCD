@@ -1,7 +1,14 @@
 package org.example;
 
+import org.example.FiniteAutomata.FiniteAutomata;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Objects;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        SymbolTable symbolTable = new SymbolTable(47);
 //        Pair<Integer, Integer> p1;
 //        Pair<Integer, Integer> p2;
@@ -37,14 +44,57 @@ public class Main {
 //
 //        System.out.println(symbolTable);
 
-            Scanner scanner = new Scanner();
-            String program1 = "p1.in";
-            String program2 = "p2.in";
-            String program3 = "p3.in";
-            String program1err = "p1err.in";
-            scanner.scan(program1);
-            scanner.scan(program2);
-            scanner.scan(program3);
-            scanner.scan(program1err);
+//            Scanner scanner = new Scanner();
+//            String program1 = "p1.in";
+//            String program2 = "p2.in";
+//            String program3 = "p3.in";
+//            String program1err = "p1err.in";
+//            scanner.scan(program1);
+//            scanner.scan(program2);
+//            scanner.scan(program3);
+//            scanner.scan(program1err);
+//    }
+            var finite_automata = new FiniteAutomata("C:\\Users\\Ovidiu\\Desktop\\FLCD\\FLCD\\LAB3\\src\\main\\resources\\FA.in");
+            System.out.println("1.Print states\n2.Print alphabet\n3.Print output states\n4.Print input states\n5.Print transitions\n6.Check word\n7.Get matching substring\n0.Exit\n");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader wordReader = new BufferedReader(new InputStreamReader(System.in));
+
+            while (true) {
+                    System.out.print(">/");
+                    var op = reader.readLine();
+                    switch (op) {
+                            case "0":
+                                    return;
+                            case "1":
+                                    finite_automata.printStates();
+                                    break;
+                            case "2":
+                                    finite_automata.printAlphabet();
+                                    break;
+                            case "3":
+                                    finite_automata.printOutputStates();
+                                    break;
+                            case "4":
+                                    finite_automata.printInitialState();
+                                    break;
+                            case "5":
+                                    finite_automata.printTransitions();
+                                    break;
+                            case "6":
+                                    var word = wordReader.readLine();
+                                    System.out.println(finite_automata.checkAccepted(word));
+                            case "7":
+                                    word = wordReader.readLine();
+                                    var acc = finite_automata.checkAccepted(word);
+                                    if (Objects.equals(acc, " ")) {
+                                            System.out.println("No matching substring");
+                                    } else {
+                                            System.out.println(acc);
+                                    }
+                                    break;
+                            default:
+                                    System.out.println("Invalid option");
+                    }
+            }
     }
 }
