@@ -27,7 +27,7 @@ public class FiniteAutomata {
         try {
             init();
         } catch (Exception e) {
-            System.out.println("Error when initializingFA");
+            System.out.println("Error when initializing FiniteAutomata");
         }
     }
 
