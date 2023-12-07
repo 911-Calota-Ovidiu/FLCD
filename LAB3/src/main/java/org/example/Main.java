@@ -82,15 +82,6 @@ public class Main {
 //                                    var word = new java.util.Scanner(System.in).nextLine();
 //                                    System.out.println(finite_automata.checkAccepted(word));
 //                                    break;
-//                            case 7:
-//                                    word = new java.util.Scanner(System.in).nextLine();
-//                                    var accepted = finite_automata.getNextAccepted(word);
-//                                    if (Objects.equals(accepted, "")) {
-//                                            System.out.println("No matching substring");
-//                                    } else {
-//                                            System.out.println(accepted);
-//                                    }
-//                                    break;
 //                            case 0:
 //                                    return;
 //                            default:
