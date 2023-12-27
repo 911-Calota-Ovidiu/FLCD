@@ -4,8 +4,9 @@ S = S
 P =
     S -> a A
     S -> a C
+    A -> a C
     A -> A B
     B -> b
     C -> a C
-    C -> C D
+    C -> c D
     D -> b

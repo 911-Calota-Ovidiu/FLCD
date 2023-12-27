@@ -55,9 +55,13 @@ class Grammar:
                         return False
         return True
 
+    def getProduction(self, production):
+        symbol = production[0]
+        index = production[1]
+        return self.P[symbol][index]
     def __str__(self):
-        result = "N = " + str(self.N) + "\n"
-        result += "E = " + str(self.E) + "\n"
-        result += "S = " + str(self.S) + "\n"
-        result += "P = " + str(self.P) + "\n"
+        result = "NonTerminals = " + str(self.N) + "\n"
+        result += "Terminals = " + str(self.E) + "\n"
+        result += "Source = " + str(self.S) + "\n"
+        result += "Transitions = " + str(self.P) + "\n"
         return result
